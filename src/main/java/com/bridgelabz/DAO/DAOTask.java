@@ -3,9 +3,13 @@ package com.bridgelabz.DAO;
 import java.util.Iterator;
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.LogicalExpression;
+import org.hibernate.criterion.Restrictions;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -39,18 +43,17 @@ public class DAOTask implements DAOMethods {
 		System.out.println(sessionFactory);
 		Session session = sessionFactory.getCurrentSession();
 		Query<?> query = session.createQuery("from Employee786");
+
 		List<?> list = query.list();
-		String name = null;
 		Iterator<?> iterator = list.iterator();
+
 		while (iterator.hasNext()) {
 			Employee786 emp = (Employee786) iterator.next();
-			name = emp.getName();
-			if (emp.getMail().equals(employees.getMail()) && emp.getPassword().equals(employees.getPassword())) {
-				System.out.println("hi..........." + emp.getName());
-				return name;
+			if (emp.getMail().equals(employees.getMail()) && emp.getPassword().equals(emp.getPassword())) {
+				return emp.getName();
 			}
 		}
-		return name;
+		return null;
 	}
 
 }

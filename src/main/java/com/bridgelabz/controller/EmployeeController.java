@@ -28,7 +28,7 @@ public class EmployeeController {
 			return view;
 		} else {
 			view.setViewName("register.jsp");
-			view.addObject("error", "Password or Phone Number already Exsists.......");
+			view.addObject("error", "Mail or Phone Number already Exsists.......");
 			return view;
 		}
 

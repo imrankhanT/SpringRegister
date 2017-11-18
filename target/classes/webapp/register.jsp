@@ -8,7 +8,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="css/login.css">
+<link rel="stylesheet" type="text/css" href="css/register.css">
 <!-- <script src="/javaScript/validation.js"></script> -->
 
 <script type="text/javascript">
